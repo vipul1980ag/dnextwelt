@@ -73,6 +73,25 @@
   ul.submenu li a:hover { background: rgba(0,229,176,0.12); color: #00e5b0; padding-left: 24px; }
   ul.submenu li a::before { content: "◦ "; color: #00e5b0; font-size: 11px; }
 
+  /* Level 3 Submenu */
+  ul.submenu-l3 {
+    display: none; position: absolute; top: 0; left: 100%;
+    background: #0a2240; border-left: 2px solid #ffaa00;
+    border-radius: 0 8px 8px 0; list-style: none;
+    min-width: 210px; box-shadow: 6px 8px 24px rgba(0,0,0,0.4); z-index: 10001;
+  }
+  ul.submenu > li:hover > ul.submenu-l3 { display: block; }
+
+  ul.submenu-l3 li a {
+    display: block; padding: 12px 18px; color: #ffe0a0;
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    border-bottom: 1px solid rgba(255,170,0,0.1);
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+  }
+  ul.submenu-l3 li:last-child a { border-bottom: none; }
+  ul.submenu-l3 li a:hover { background: rgba(255,170,0,0.12); color: #ffaa00; padding-left: 24px; }
+  ul.submenu-l3 li a::before { content: "– "; color: #ffaa00; font-size: 10px; }
+
   .highlight-link > a { color: #00e5b0 !important; }
   .highlight-link > a:hover { color: #fff !important; background: rgba(0,229,176,0.1) !important; }
 </style>
@@ -85,7 +104,22 @@
     <li>
       <a href="#" class="has-dropdown">Our Services</a>
       <ul class="dropdown">
-        <li><a href="/it-consulting">IT Consulting</a></li>
+        <li>
+          <a href="#" class="has-submenu">IT Consulting</a>
+          <ul class="submenu">
+            <li>
+              <a href="#" class="has-submenu">SAP Services</a>
+              <ul class="submenu submenu-l3">
+                <li><a href="/sap-implementations">SAP Implementations</a></li>
+                <li><a href="/customized-solutions">Customized Solutions</a></li>
+                <li><a href="/optimized-logistics">Optimized Logistics</a></li>
+                <li><a href="/support-maintenance">Support &amp; Maintenance</a></li>
+                <li><a href="/upgrade-migration">Upgrade &amp; Migration</a></li>
+                <li><a href="/training-workshops">Training &amp; Workshops</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="/it-innovation">IT Innovation</a></li>
         <li>
           <a href="#" class="has-submenu">DNEXTWELT Apps</a>
