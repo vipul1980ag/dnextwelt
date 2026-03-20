@@ -2,9 +2,10 @@
 // “Hello, World!” Example: https://learn-code.wix.com/en/article/hello-world
 
 $w.onReady(function () {
-    // Write your JavaScript here
-
-    // To select an element by ID use: $w('#elementID')
-
-    // Click 'Preview' to run your code
+    // Handle navigation messages from the HTML nav component
+    $w('#html1').on('message', (event) => {
+        if (event.data && event.data.href) {
+            wixLocation.to(event.data.href);
+        }
+    });
 });
